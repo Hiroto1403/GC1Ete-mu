@@ -8,9 +8,11 @@ Game::Game():Base(eType_Scene)
 {
 	Base::Add(new Player(CVector2D(1280 / 2, 600)));
 	int x = 100, y = 100;
-	while (x <= 600) {//&&y <= 500) {
+	while (x,y <= 600) {//&&y <= 500) {
 		Base::Add(new Enemy(CVector2D(x, 300)));
 		x += 100;
+		Base::Add(new Enemy(CVector2D(y, 300)));
+		y += 100;
 		//y += 100;
 	}
 	//Base::Add(new Enemy(CVector2D(300, 100)));
@@ -34,4 +36,7 @@ void Game::Update()
 	if (!Base::FindObject(eType_Enemy) && PUSH(CInput::eButton1)) {
 		SetKill();
 	}
+	/*if (Base::FindObject(eType_Enemy).m_pos.y>720 && PUSH(CInput::eButton1)) {
+		SetKill();
+	}*/
 }
