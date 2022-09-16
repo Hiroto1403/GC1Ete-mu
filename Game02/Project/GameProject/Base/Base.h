@@ -7,6 +7,7 @@ enum {	// 列挙型
 	eType_Bullet,
 	eType_Effect,
 	eType_UI,
+	eType_Scene,
 };
 
 class Base {
@@ -33,6 +34,7 @@ public:
 	static void CollisionAll();
 	// オブジェクトの追加
 	static void Add(Base* b);
+	static void KillAll();
 	// 円同士の衝突
 	static bool CollisionCircle(Base* b1,Base* b2);
 	static void CheckKillAll();

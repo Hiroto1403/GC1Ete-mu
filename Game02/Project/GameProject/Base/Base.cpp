@@ -87,6 +87,14 @@ void Base::Add(Base* b)
 	m_list.push_back(b);
 }
 
+void Base::KillAll()
+{
+	std::list<Base*>ret;
+	for (auto& b : m_list) {
+		b->SetKill();
+	}
+}
+
 bool Base::CollisionCircle(Base* b1, Base* b2)
 {
 	CVector2D v = b1->m_pos - b2->m_pos;

@@ -23,6 +23,12 @@
     <ClCompile Include="Game\UI.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="Game\Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Title\Title.cpp">
+      <Filter>Title</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -30,6 +36,9 @@
     </Filter>
     <Filter Include="Game">
       <UniqueIdentifier>{6fd4845c-67e9-4b80-96b2-bbd6533ec30b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Title">
+      <UniqueIdentifier>{741f8357-06cb-4996-8df0-2b59c6bb5356}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -53,6 +62,12 @@
     </ClInclude>
     <ClInclude Include="Game\UI.h">
       <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Title\Title.h">
+      <Filter>Title</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
