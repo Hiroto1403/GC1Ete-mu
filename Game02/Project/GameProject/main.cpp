@@ -109,6 +109,11 @@ void Init(void)
 
 
 
+	SOUND("BGM_Game")->Load("Sound/BGM/birth-and-death.wav");
+	//BGM@ƒ‹[ƒvÄ¶
+	SOUND("BGM_Game")->Play(true);
+
+
 
 
 }
