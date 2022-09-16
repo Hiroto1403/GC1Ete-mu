@@ -17,7 +17,7 @@ Effect::Effect(const CVector2D& pos):Base(eType_Effect)
 {
 	// アニメーションデータ付きで読み込み
 	//			ファイル名				アニメーションデータ,幅,高さ
-	m_img.Load("Image/bom.png", effectAnimData, 96, 96);
+	m_img.Load("Image/Effect_Bomb.png", effectAnimData, 96, 96);
 	m_pos = pos;
 	// アニメーション変更(ループフラグ)
 	m_img.ChangeAnimation(0, false);	
