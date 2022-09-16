@@ -8,6 +8,7 @@ Player::Player(const CVector2D& pos):Base(eType_Player)
 	m_rad = 12;
 	m_img.SetSize(32, 32);
 	m_img.SetCenter(16, 16);
+	m_hp = 3;
 }
 
 void Player::Update()

@@ -6,7 +6,7 @@
 
 Game::Game():Base(eType_Scene)
 {
-	Base::Add(new Player(CVector2D(200, 500)));
+	Base::Add(new Player(CVector2D(1280 / 2, 600)));
 	int x = 100, y = 100;
 	while (x <= 600) {//&&y <= 500) {
 		Base::Add(new Enemy(CVector2D(x, 300)));
@@ -26,7 +26,8 @@ Game::~Game()
 
 void Game::Update()
 {
-	//プレイヤー死亡時　ボタン1でゲーム終了
+	
+	//プレイヤー死亡時　Zボタンでタイトルへ戻る
 	if (!Base::FindObject(eType_Player) && PUSH(CInput::eButton1)) {
 		SetKill();
 	}

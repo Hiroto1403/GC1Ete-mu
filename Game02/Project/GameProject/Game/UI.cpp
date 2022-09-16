@@ -28,4 +28,16 @@ void UI::Draw()
 		m_img.SetPos(100,200);
 		m_img.Draw();
 	}
+	Base* player = Base::FindObject(eType_Player);
+
+	if (player == nullptr) {
+		Base* player = Base::FindObject(eType_Player);
+		// プレイヤーがいなければ
+			// ゲームオーバーの表示
+		m_img.SetRect(0, 96, 0 + 160, 96 + 32);
+		m_img.SetSize(160, 32);
+		m_img.SetPos(100, 200);
+		m_img.Draw();
+	}
 }
+

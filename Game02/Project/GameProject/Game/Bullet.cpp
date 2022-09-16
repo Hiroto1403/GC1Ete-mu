@@ -37,6 +37,7 @@ void Bullet::Collision(Base* b)
 			Base::Add(new Effect(b->m_pos));
 			GameData::s_score += 100;
 			// 敵を倒す度にスコアを100追加
+			
 		}
 		break;
 	}

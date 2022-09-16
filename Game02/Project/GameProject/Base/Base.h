@@ -5,6 +5,7 @@ enum {	// —ñ‹“Œ^
 	eType_Player,
 	eType_Enemy,
 	eType_Bullet,
+	eType_Bullet_E,
 	eType_Effect,
 	eType_UI,
 	eType_Scene,
@@ -12,6 +13,7 @@ enum {	// —ñ‹“Œ^
 
 class Base {
 public:
+	int m_hp;
 	bool m_kill;
 	float m_rad;
 	int m_type;
