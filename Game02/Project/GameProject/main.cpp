@@ -107,9 +107,7 @@ void Init(void)
 	//Base::Add(new Enemy(CVector2D(300, 100)));
 	Base::Add(new UI());
 
-
-
-	SOUND("BGM_Game")->Load("Sound/BGM/birth-and-death.wav");
+    SOUND("BGM_Game")->Load("Sound/BGM/birth-and-death.wav");
 	//BGM@ƒ‹[ƒvÄ¶
 	SOUND("BGM_Game")->Play(true);
 
