@@ -1,4 +1,4 @@
-#include "Enemy.h"
+   #include "Enemy.h"
 #include "Bullet_E.h"
 
 Enemy::Enemy(const CVector2D& pos):Base(eType_Enemy)

@@ -1,4 +1,4 @@
-#pragma once
+  #pragma once
 #include "../Base/Base.h"
 
 // Base.h‚Íˆê‚Âã‚ÌƒtƒHƒ‹ƒ_(..)

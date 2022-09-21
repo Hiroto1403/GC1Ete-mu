@@ -6,6 +6,7 @@
 
 Game::Game():Base(eType_Scene)
 {
+	SOUND("BGM_Game")->Play(true);
 	Base::Add(new Player(CVector2D(1280 / 2, 600)));
 	int x = 100, y = 100;
 	while (x <= 600) {//&&y <= 500) {
@@ -18,7 +19,10 @@ Game::Game():Base(eType_Scene)
 }
 
 Game::~Game()
-{//全てのオブジェクト破棄
+{
+	SOUND("BGM_Game")->Stop();
+	SOUND("BGM_Title")->Play(false);
+	//全てのオブジェクト破棄
 	Base::KillAll();
 	//タイトルシーンへ
 	Base::Add(new Title());
@@ -26,10 +30,13 @@ Game::~Game()
 
 void Game::Update()
 {
-	
+	//if (!Base::FindObject(eType_Player))
+		//SOUND("SE_Over")->Play(false);
+		
 	//プレイヤー死亡時　Zボタンでタイトルへ戻る
 	if (!Base::FindObject(eType_Player) && PUSH(CInput::eButton1)) {
 		SetKill();
+		
 	}
 	if (!Base::FindObject(eType_Enemy) && PUSH(CInput::eButton1)) {
 		SetKill();
