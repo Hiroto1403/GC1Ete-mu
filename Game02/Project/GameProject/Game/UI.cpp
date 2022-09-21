@@ -36,6 +36,9 @@ void UI::Draw()
 		m_img.SetSize(160, 32);
 		m_img.SetPos(570, 340);
 		m_img.Draw();
+
+		
+		
 	}
 }
 

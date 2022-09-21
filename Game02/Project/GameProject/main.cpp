@@ -103,11 +103,11 @@ void Init(void)
 
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/Title2.png"));
 	Base::Add(new Title());
-    SOUND("BGM_Game")->Load("Sound/BGM/birth-and-death.wav");
-	//BGM@ƒ‹[ƒvÄ¶
-	SOUND("BGM_Game")->Play(true);
 
-
+	SOUND("BGM_Game")->Load("Sound/BGM/birth-and-death.wav");
+	SOUND("BGM_Title")->Load("Sound/BGM/uchuu-tanken.wav");
+	SOUND("BGM_Title")->Play(true);
+	SOUND("SE_Over")->Load("Sound/SE/game-over.wav");
 
 }
 

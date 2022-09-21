@@ -13,6 +13,8 @@ m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 64), m_title2_text("C:\\Windows
 
 Title::~Title()
 {
+	SOUND("BGM_Title")->Stop();
+	SOUND("BGM_Game")->Play(false);
 	//全てのオブジェクトを破棄
 	Base::KillAll();
 	//ゲームシーンへ移行
