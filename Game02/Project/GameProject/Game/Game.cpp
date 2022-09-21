@@ -3,18 +3,21 @@
 #include"Enemy.h"
 #include"../Title/Title.h"
 #include"UI.h"
+#include"Hp.h"
 
 Game::Game():Base(eType_Scene)
 {
+	Base::Add(new Hp());
 	Base::Add(new Player(CVector2D(1280 / 2, 600)));
-	int x = 100, y = 100;
-	while (x,y <= 600) {//&&y <= 500) {
-		Base::Add(new Enemy(CVector2D(x, 300)));
-		x += 100;
-		Base::Add(new Enemy(CVector2D(y, 300)));
-		y += 100;
+	int x = 100, y = 200;
+	while (x <= 600) {//&&y <= 500) {
+		Base::Add(new Enemy(CVector2D(x, y)));
+		Base::Add(new Enemy(CVector2D(x, y + 100)));
+		x += 100;;
+		//y += 100;
 		//y += 100;
 	}
+	
 	//Base::Add(new Enemy(CVector2D(300, 100)));
 	Base::Add(new UI());
 }

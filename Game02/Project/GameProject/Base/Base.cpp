@@ -130,3 +130,37 @@ std::list<Base*> Base::FindObjects(int type)
 	}
 	return ret;
 }
+
+bool Base::CollisionRect(Base* b1, Base* b2)
+{
+	//b1の矩形
+	CRect rect1 = CRect(
+		b1->m_pos.x + b1->m_rect.m_left,
+		b1->m_pos.y + b1->m_rect.m_top,
+		b1->m_pos.x + b1->m_rect.m_right,
+		b1->m_pos.y + b1->m_rect.m_bottom);
+	//b2の矩形
+	CRect rect2 = CRect(
+		b2->m_pos.x + b2->m_rect.m_left,
+		b2->m_pos.y + b2->m_rect.m_top,
+		b2->m_pos.x + b2->m_rect.m_right,
+		b2->m_pos.y + b2->m_rect.m_bottom);
+
+	//矩形同士の判定
+	if (rect1.m_left <= rect2.m_right && rect1.m_right >= rect2.m_left &&
+		rect1.m_top <= rect2.m_bottom && rect1.m_bottom >= rect2.m_top)
+		return true;
+
+	return false;
+
+}
+
+void Base::DrawRect()
+{
+	// デバッグ用　矩形の表示
+		CRect rect = CRect(
+			m_pos.x + m_rect.m_left,
+			m_pos.y + m_rect.m_top,
+			m_pos.x + m_rect.m_right,
+			m_pos.y + m_rect.m_bottom);
+}

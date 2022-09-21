@@ -30,11 +30,12 @@ void Enemy::Update()
 		if (b) {
 			b->m_hp -= 1;
 			// ‰æ–ÊŠO‚É“G‚ªo‚½”‚¾‚¯HPŒ¸‚ç‚·
-		}
-		if (b->m_hp <= 0) {
-		// HP‚ª0ˆÈ‰º‚È‚ç“|‚·
-			b->SetKill();
-			Base::Add(new Effect(b->m_pos));
+
+			if (b->m_hp <= 0) {
+				// HP‚ª0ˆÈ‰º‚È‚ç“|‚·
+				b->SetKill();
+				Base::Add(new Effect(b->m_pos));
+			}
 		}
 		SetKill();
 	}
@@ -67,4 +68,26 @@ void Enemy::Draw()
 {
 	m_img.SetPos(m_pos);
 	m_img.Draw();
+}
+
+void Enemy::Collision(Base* b)
+{
+	switch (b->m_type) {
+		// ‘ÎÛ‚ÌƒIƒuƒWƒFƒNƒg‚É‚æ‚Á‚Ä•ªŠò
+	case eType_Player:
+		// ƒvƒŒƒCƒ„[‚Ìê‡
+		if (Base::CollisionCircle(this, b)) {
+			// ‰~“¯Žm‚Ì”»’è
+			b->m_hp -= 1;
+			
+			if (b->m_hp <= 0) {
+				// HP‚ª0ˆÈ‰º‚È‚ç“|‚·
+				b->SetKill();
+				SetKill();
+				Base::Add(new Effect(b->m_pos));
+			}
+			SetKill();
+		}
+		break;
+	}
 }
