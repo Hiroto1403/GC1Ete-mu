@@ -19,15 +19,6 @@ void UI::Draw()
 	}
 
 	Base* enemy = Base::FindObject(eType_Enemy);
-
-	if (enemy == nullptr) {
-	// 敵がいなければ
-		// ゲームクリアの表示
-		m_img.SetRect(0,64,0+160,64+32);
-		m_img.SetSize(160,32);
-		m_img.SetPos(100,200);
-		m_img.Draw();
-	}
 	Base* player = Base::FindObject(eType_Player);
 
 	if (player == nullptr) {
@@ -36,7 +27,14 @@ void UI::Draw()
 			// ゲームオーバーの表示
 		m_img.SetRect(0, 96, 0 + 160, 96 + 32);
 		m_img.SetSize(160, 32);
-		m_img.SetPos(100, 200);
+		m_img.SetPos(570, 340);
+		m_img.Draw();
+	}else if (enemy == nullptr) {
+		// 敵がいなければ
+			// ゲームクリアの表示
+		m_img.SetRect(0, 64, 0 + 160, 64 + 32);
+		m_img.SetSize(160, 32);
+		m_img.SetPos(570, 340);
 		m_img.Draw();
 
 		

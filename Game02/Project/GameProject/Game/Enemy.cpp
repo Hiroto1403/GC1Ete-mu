@@ -1,5 +1,7 @@
    #include "Enemy.h"
 #include "Bullet_E.h"
+#include"Player.h"
+#include"Effect.h"
 
 Enemy::Enemy(const CVector2D& pos):Base(eType_Enemy)
 {
@@ -21,6 +23,22 @@ void Enemy::Update()
 		m_pos.y += move_speed;		//	下移動
 		m_cnt = 0;					//	カウンターリセット
 	}
+	
+	if (m_pos.y >= 720) {
+		Base* b = Base::FindObject(eType_Player);
+		// プレイヤーが存在している時のみ
+		if (b) {
+			b->m_hp -= 1;
+			// 画面外に敵が出た数だけHP減らす
+		}
+		if (b->m_hp <= 0) {
+		// HPが0以下なら倒す
+			b->SetKill();
+			Base::Add(new Effect(b->m_pos));
+		}
+		SetKill();
+	}
+	
 	//switch (敵のタイプ){
 	//case 弱敵なら:
 	if (m_cnt_bullet[yowa_E] >= 120) {			// 120カウント(2秒)以上なら
