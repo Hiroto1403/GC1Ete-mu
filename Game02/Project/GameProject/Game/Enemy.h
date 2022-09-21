@@ -18,5 +18,6 @@ public:
 	Enemy(const CVector2D& pos);
 	void Update();
 	void Draw();
+	void Collision(Base* b);
 };
 

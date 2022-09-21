@@ -9,6 +9,7 @@ enum {	// 列挙型
 	eType_Effect,
 	eType_UI,
 	eType_Scene,
+	eType_Hp,
 };
 
 class Base {
@@ -19,6 +20,8 @@ public:
 	int m_type;
 	CVector2D m_pos;
 	static std::list<Base*> m_list;
+	//矩形
+	CRect m_rect;
 public:
 	//×Base;　←タイプを設定しているのに入力しないとエラーの原因になる
 	Base(int type);						// (引数付きの)コンストラクタ
@@ -41,4 +44,9 @@ public:
 	static bool CollisionCircle(Base* b1,Base* b2);
 	static void CheckKillAll();
 	static std::list<Base*>FindObjects(int type);
+	//矩形同士の判定
+	static bool CollisionRect(Base* b1, Base* b2);
+	//矩形表示
+	void DrawRect();
 };
+
